@@ -27,15 +27,6 @@ return (info->environ);
  */
 int _unsetenv(info_t *info, char *var)
 {
-list_t *node = info->env;
-size_t i = 0;
-char *p;
-
-if (!node || !var)
-return (0);
-
-while (node)
-{
 p = starts_with(node->str, var);
 if (p && *p == '=')
 {
